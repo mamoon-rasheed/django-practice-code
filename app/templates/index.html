@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>{{ name}}</li>
+      <li>{{age}}</li>
+      <li>
+        Hobbies
+        <ol>
+          {% for hobby in hobbies %}
+          <li>{{ hobby }}</li>
+          {% endfor %}
+        </ol>
+      </li>
+      <li>
+        Friends
+        <ol>
+          {% for friend in friends %}
+          <li>{{ friend.name }} {{ friend.age }}</li>
+          {% endfor %}
+        </ol>
+      </li>
+
+      <li>
+        Favorite Musicians
+        <ol>
+          {% for musician in favorite_musicians %}
+          <li>{{ musician.name }} {{ musician.genre }}</li>
+          {% endfor %}
+        </ol>
+      </li>
+    </ul>
+  </body>
+</html>
