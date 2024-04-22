@@ -1,0 +1,34 @@
+{% extends "./base.html" %} 
+
+{% comment %} Title of the page {% endcomment %}
+{% block title %}Musician Details{% endblock %} 
+
+{% comment %} Content Goes Here {% endcomment %}
+{% block content %}
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12">
+        <h1 class="text-center">Musician Details</h1>
+        <ul>
+            <li><strong>First Name:</strong> {{ musician.first_name }}</li>
+            <li><strong>Last Name:</strong> {{ musician.last_name }}</li>
+            <li><strong>Instrument:</strong> {{ musician.instrument }}</li>
+        </ul>
+
+        <h1>Albums</h1>
+        <ul>
+            {% for album in albums %}
+                <li><a href="{% url 'album_details' album.id %}">{{ album.name }}</a>
+                    <ul>
+                        
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% comment %} <a href="{% url 'musicians' %}" class="btn btn-primary">Back to Musicians</a> {% endcomment %}
+    </div>
+  </div>
+</div>
+{% endblock %}

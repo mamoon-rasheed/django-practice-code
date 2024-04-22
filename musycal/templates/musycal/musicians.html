@@ -1,0 +1,36 @@
+{% extends "./base.html" %} 
+
+{% comment %} Title of the page {% endcomment %}
+{% block title %}Musicians{% endblock %} 
+
+{% comment %} Content Goes Here {% endcomment %}
+{% block content %}
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Instrument</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for musician in musicians %}
+          <tr>
+            <td>
+                <a href="{% url "musician_details" musician.id %}">
+                    {{ musician.first_name }}</a>
+                </td>
+            <td>{{ musician.last_name }}</td>
+            <td>{{ musician.instrument }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

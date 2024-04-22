@@ -1,0 +1,17 @@
+{% extends "./base.html" %} {% block title %}Albums{% endblock %} {% block
+    content %}
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-12">
+          <ul>
+            {% for album in albums %}
+            <li>
+              <a href="{% url "album_details" album.id %}">{{ album.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    
