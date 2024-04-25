@@ -21,19 +21,29 @@
         Friends
         <ol>
           {% for friend in friends %}
-          <li>{{ friend.name }} {{ friend.age }}</li>
+            <li>{{ friend.name }} {{ friend.age }}</li>
           {% endfor %}
         </ol>
       </li>
 
       <li>
         Favorite Musicians
+        
         <ol>
           {% for musician in favorite_musicians %}
-          <li>{{ musician.name }} {{ musician.genre }}</li>
+          <li><a href="{% url 'music_details' musician.id %}">
+            {{ musician.name }} {{ musician.genre }}</a>
+          </li>
           {% endfor %}
         </ol>
       </li>
     </ul>
+    <a href="{% url 'htmlpage' %}">Home Page</a>
+    
   </body>
 </html>
+
+
+
+
+
