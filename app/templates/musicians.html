@@ -20,7 +20,7 @@
             {% for musician in favorite_musicians  %}
             <tr>
                 <td>{{ musician.id }}</td>
-                <td>{{ musician.name }}</td>
+                <td><a href="{% url "singer_details" musician.id %}"> {{ musician.name }} </a></td>
                 <td>{{ musician.genre }}</td>
             </tr>
         {% endfor %}

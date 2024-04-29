@@ -9,13 +9,26 @@ musicians_data = {
         ]
     }
 
+# Create your views here.
 def musicians(request):
     return render(request, 'musicians.html', musicians_data)
 
-# Create your views here.
-def music_details(request, id):
-    
-    return render(request, 'music_details.html')
+def musician_details(request, id):
+    # find the musician with the given id
+    musician = None
+    for m in musicians_data['favorite_musicians']:
+        if m['id'] == id:
+            musician = m
+            break
+    if musician is None:
+        return HttpResponse('Musician not found')
+    #print(musician)
+    context = {
+        'id' : musician['id'],
+        'name': musician['name'],
+        'genre': musician['genre']
+    }
+    return render(request, 'music_details.html', context)
 
 def hello(request, name):
     context = {
