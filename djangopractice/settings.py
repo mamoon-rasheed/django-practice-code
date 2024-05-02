@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
     'musycal.apps.MusycalConfig',
+    'employee.apps.EmployeeConfig',
 ]
 
 MIDDLEWARE = [

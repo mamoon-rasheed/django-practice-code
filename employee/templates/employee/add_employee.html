@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+</head>
+<body>
+    <form action="/addemployee" method="post">
+        {% csrf_token %}
+
+        {{ employeeform.as_p }}
+
+        {% comment %} {% if firstname_error %}
+        <p>
+            {{ firstname_error }}
+        </p>
+        {% endif %}
+
+        {% if lastname_error %}
+        <p>
+            {{ lastname_error }}
+        </p>
+        {% endif %}
+
+        {% if jobtitle_error %}
+        <p>
+            {{ jobtitle_error }}
+        </p>
+        {% endif %}
+
+
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" id="firstname">
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" id="lastname">
+        
+        <label for="jobtitle">Job Title:</label>
+        <input type="text" name="jobtitle" id="jobtitle">
+        
+        <label for="hiredate">Hire Date:</label>
+        <input type="date" name="hiredate" id="hiredate">
+        
+        <label for="salary">Salary:</label>
+        <input type="text" name="salary" id="salary">
+         {% endcomment %}
+        <input type="submit" value="Add Employee">
+    </form>
+</body>
+</html>
