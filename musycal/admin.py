@@ -43,7 +43,7 @@ class SongAdmin(admin.ModelAdmin):
     ]
     
 admin.site.site_header = 'Musycal Administration'
-admin.site.register(Musician, MusicianAdmin)
-admin.site.register(Album, AlbumAdmin)
-admin.site.register(Song, SongAdmin)
-admin.site.register(Genre)
+# admin.site.register(Musician, MusicianAdmin)
+# admin.site.register(Album, AlbumAdmin)
+# admin.site.register(Song, SongAdmin)
+# admin.site.register(Genre)
